@@ -1,0 +1,127 @@
+body{
+    background-size: 100%;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+.header, .footer{
+    padding: 1em 0;
+}
+
+.header{
+    color: #b3b3fc ;
+    font-family:serif;
+    font-weight:bold;
+    margin-left: 10px;
+}
+
+.chooseXTitle{
+    text-align: center;
+
+}
+
+.chooseX{
+
+    display: inline-block;
+    float: left;
+    margin: auto;
+}
+
+.chooseElement > .YR >.chooseR{
+    width: 200px;
+    height: 100px;
+}
+
+.YR{
+    margin-left: 170px;
+    margin-right: 20px;
+    width: 210px;
+    color: black;
+    border-radius: 15px;
+    opacity: 1;
+}
+
+.basis{
+    background: #FFCCCC;
+    color: black;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 50px;
+    padding-bottom: 80px;
+    width: 700px;
+    height: 250px;
+    opacity: 0.8;
+    border: 3px solid #ccccfd;
+    margin: auto;
+
+}
+
+.chooseElement{
+    float: left;
+    margin-right: 10px;
+}
+
+.butt{
+    margin-top: 30px;
+    background: #ccccfd;
+    color: black;
+    border: none;
+    padding: 1rem 1.5rem;
+}
+
+.butt:hover { background: #6e68bd; }
+
+table {
+    color: black;
+    width: 100%;
+    border-spacing: 1px;
+    text-align: center;
+    overflow: scroll;
+}
+
+td, th, tr {
+    width: 20%;
+    text-align: center;
+}
+
+.centerBorder {
+    background: #FFCCCC;
+    color: black;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    width: 700px;
+    height: 400px;
+    opacity: 0.8;
+    overflow: scroll;
+    margin: auto;
+    border: 3px solid #ccccfd;
+}
+
+::selection {
+    background: #ccccfd;
+}
+
+.graf{
+    height: 250px;
+
+}
+
+#image{
+    border: 3px solid #ccccfd;
+    margin-left: 30px;
+    width: 250px;
+    height: 250px;
+}
+
+#VT_logo{
+    background: #ccccfd
+
+}
+
+input[type=text] {
+
+    font-size: 15px;
+    text-align: center;
+}
