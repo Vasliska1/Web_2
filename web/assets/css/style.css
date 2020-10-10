@@ -120,6 +120,7 @@ td, th, tr {
     text-align: center;
 }
 
+/*
 .centerBorder {
     background: #FFCCCC;
     color: black;
@@ -134,14 +135,12 @@ td, th, tr {
     margin: auto;
     border: 3px solid #ccccfd;
 }
+*/
 
 ::selection {
     background: #ccccfd;
 }
 
-.graf {
-    height: 250px;
-}
 
 #image {
     border: 3px solid #ccccfd;

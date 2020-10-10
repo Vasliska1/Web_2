@@ -56,19 +56,17 @@
             </div>
 
 
-
             <div id="message"></div>
 
             <div class="buttons">
                 <div class="button">
-                    <button class="butt submit_button" type="submit" name="Y" id = "Y">Отправить</button>
+                    <button class="butt submit_button" type="submit" name="Y" id="Y">Отправить</button>
                 </div>
 
                 <div class="reset">
                     <button class="butt" type="reset">Очистить</button>
                 </div>
             </div>
-
 
 
         </form>
@@ -78,7 +76,7 @@
 		include('header.php');
 	?>
 
-
+</div>
     <div class="svg">
 
         <svg width="300" height="300" id="graph" class="svg-graph">
@@ -112,16 +110,15 @@
 
         </svg>
     </div>
-</div>
-
 <center>
-    <div class="footer">
-        <a href="https://se.ifmo.ru/">
-            <img id="VT_logo" src="assets/images/vt_logo.png" width="100" height="100 " alt="logo">
-        </a>
-        <span class="center">ПИП 2020 г.</span>
-    </div>
+<div class="footer">
+    <a href="https://se.ifmo.ru/">
+        <img id="VT_logo" src="assets/images/vt_logo.png" width="100" height="100 " alt="logo">
+    </a>
+    <span class="center">ПИП 2020 г.</span>
+</div>
 </center>
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
         crossorigin="anonymous"></script>

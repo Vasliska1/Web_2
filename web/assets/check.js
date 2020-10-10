@@ -77,11 +77,26 @@ var r = document.getElementById('enterR').value;
     var svgPoint = htmlCoordinatesPoint.matrixTransform(svg.getScreenCTM().inverse());
     var calcX = r*(svgPoint.x -150) / 95 ; //svg coordinates to point coordinates
     var calcY = r* -(svgPoint.y-150) /95;
-    alert(calcX);
-    alert(calcY);
+;
 
     document.getElementById('enterX').setAttribute('value', String(calcX));
     document.getElementById('Y').setAttribute('value', String(calcY));
+
+    var canvas = document.createElement("canvas");
+    canvas.setAttribute("width", window.innerWidth);
+    canvas.setAttribute("height", window.innerHeight);
+    canvas.setAttribute("style", "position: absolute; x:0; y:0;");
+    document.body.appendChild(canvas);
+
+//Then you can draw a point at (10,10) like this:
+  //  var getY = calcY.getBoundingClientRect();
+    var ctx = canvas.getContext("2d");
+    alert(svgPoint.x)
+    alert(svgPoint.y)
+    var getY=  e.clientY-50;
+    ctx.fillRect(e.clientX, getY,10,10);
+
+
 /*
     const xText = document.getElementById('x-header');
     const xElem = document.getElementById('x-choice');
@@ -95,6 +110,7 @@ var r = document.getElementById('enterR').value;
     if (radio) radio.checked="";
     document.getElementById('form').submit();*/
 });
+
 
 
 
