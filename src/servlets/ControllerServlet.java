@@ -14,16 +14,16 @@ public class ControllerServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Double x = Double.parseDouble(req.getParameter("enterX"));
-        // Double y = Double.parseDouble(req.getParameter("y"));
-        Double r = Double.parseDouble(req.getParameter("enterR"));
-        System.out.println(1);
-        if (validate(x, 2, r))
-            req.getServletContext().getRequestDispatcher("/AreaCheckServlet").forward(req, resp);
-        else {
+        if (!req.getParameter("enterX").equals("") && !req.getParameter("enterR").equals("")) {
+            Double x = Double.parseDouble(req.getParameter("enterX"));
+             Double y = Double.parseDouble(req.getParameter("Y"));
+            Double r = Double.parseDouble(req.getParameter("enterR"));
+            System.out.println(y);
+            if(validate(x, y, r))
+                req.getServletContext().getRequestDispatcher("/AreaCheckServlet").forward(req, resp);
+        } else {
             req.getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
         }
-
 
     }
 

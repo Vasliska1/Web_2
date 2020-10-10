@@ -25,58 +25,65 @@
 
             <div class="chooseX">
                 <label class="chooseXTitle"><p>Введите значение X от -3 до 5:</p></label>
-                <input class="enterY" name="enterX" type="text"><br><br>
+                <input class="enterX" id="enterX" name="enterX" type="text"><br><br>
             </div>
 
-            <div class="chooseY">
+            <div>
+
                 <label class="chooseYTitle"><p>Выберите Y:</p></label>
-                <label><input type="button" id="1" name="chooseR" value="-3"></label>
-                <label><input type="button" id="2" name="chooseR" value="-2"></label>
-                <label><input type="button" id="3" name="chooseR" value="-1"></label>
-                <label><input type="button" id="4" name="chooseR" value="0"></label>
-                <label><input type="button" id="5" name="chooseR" value="1"></label>
-                <label><input type="button" id="6" name="chooseR" value="2"></label>
-                <label><input type="button" id="7" name="chooseR" value="3"></label>
-                <label><input type="button" id="8" name="chooseR" value="4"></label>
-                <label><input type="button" id="9" name="chooseR" value="5"></label>
+                <table class="blocktext">
+                    <tr>
+                        <td><label><input type="button" class="button" id="1" name="Y" value="-3"></label></td>
+                        <td><label><input type="button" class="button" id="2" name="Y" value="-2"></label></td>
+                        <td><label><input type="button" class="button" id="3" name="Y" value="-1"></label></td>
+                    </tr>
+                    <tr>
+                        <td><label><input type="button" class="button" id="4" name="Y" value="0"></label></td>
+                        <td><label><input type="button" class="button" id="5" name="Y" value="1"></label></td>
+                        <td><label><input type="button" class="button" id="6" name="Y" value="2"></label></td>
+                    </tr>
+                    <tr>
+                        <td><label><input type="button" class="button" id="7" name="Y" value="3"></label></td>
+                        <td><label><input type="button" class="button" id="8" name="Y" value="4"></label></td>
+                        <td><label><input type="button" class="button" id="9" name="Y" value="5"></label></td>
+                    </tr>
+                </table>
             </div>
 
-            <div class="chooseY">
+            <div class="chooseR">
                 <label class="chooseRTitle"><p>Введите значение R от 2 до 5:</p></label>
-                <input class="enterR" name="enterR" type="text">
+                <input class="enterR" name="enterR" id="enterR" type="text">
             </div>
 
 
-            <div class="button">
-                <input class="butt" type="submit" name="sendButton" value="Отправить">
-            </div>
-
-
-            <div class="graf">
-                <img id="image" src="assets/images/graphik.png" width="200" height="200" alt="logo">
-            </div>
 
             <div id="message"></div>
+
+            <div class="buttons">
+                <div class="button">
+                    <button class="butt submit_button" type="submit" name="Y" id = "Y">Отправить</button>
+                </div>
+
+                <div class="reset">
+                    <button class="butt" type="reset">Очистить</button>
+                </div>
+            </div>
+
+
+
         </form>
     </div>
-</div>
 
     <?php
 		include('header.php');
 	?>
 
-    <center>
-        <div class="footer">
-            <a href="https://se.ifmo.ru/">
-                <img id="VT_logo" src="assets/images/vt_logo.png" width="100" height="100 " alt="logo">
-            </a>
-            <span class="center">ПИП 2020 г.</span>
-        </div>
-    </center>
-
 
     <div class="svg">
-        <svg width="300" height="300" class="svg-graph">
+
+        <svg width="300" height="300" id="graph" class="svg-graph">
+
+            <polygon class="frame" points="0,0 0,300 300,300 300,0"></polygon>
 
             <polygon class="przamoyg" points="100,150 150,150 150,250, 100,250"
                      fill="#FF00CC" stroke="black"></polygon>
@@ -103,12 +110,28 @@
             <text class="text" x="290" y="170">X</text>
             <text class="text" x="160" y="13">Y</text>
 
-
         </svg>
     </div>
+</div>
 
+<center>
+    <div class="footer">
+        <a href="https://se.ifmo.ru/">
+            <img id="VT_logo" src="assets/images/vt_logo.png" width="100" height="100 " alt="logo">
+        </a>
+        <span class="center">ПИП 2020 г.</span>
+    </div>
+</center>
 
-    <script src="check.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+<script>
+    $('label > .button').click(function () {
+        y = ($(this).val());
+        $('.submit_button').val(y);
+    });
+</script>
+<script src="assets/check.js"></script>
 
 
 </body>

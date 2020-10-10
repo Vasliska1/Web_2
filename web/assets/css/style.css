@@ -1,67 +1,72 @@
-body{
+body {
     background-size: 100%;
     background-attachment: fixed;
     margin: 0;
 }
 
-.header, .footer{
+.header, .footer {
     padding: 1em 0;
 }
 
-.header{
-    color: #b3b3fc ;
-    font-family:serif;
-    font-weight:bold;
+.header {
+    color: #b3b3fc;
+    font-family: serif;
+    font-weight: bold;
     margin-left: 10px;
 }
 
-.chooseXTitle{
-    text-align: center;
+.chooseXTitle {
+    /*text-align: center;*/
+}
+
+.chooseRTitle {
+    /*text-align: center;*/
+}
+
+.svg {
+    float: right;
 
 }
 
-.chooseX{
-
+/*.chooseX {
     display: inline-block;
     float: left;
     margin: auto;
 }
-
-.chooseElement > .YR >.chooseR{
+.chooseElement > .YR > .chooseR {
     width: 200px;
     height: 100px;
 }
-
-.YR{
+.YR {
     margin-left: 170px;
     margin-right: 20px;
     width: 210px;
     color: black;
     border-radius: 15px;
     opacity: 1;
-}
+}*/
 
-.basis{
+.basis {
     background: #FFCCCC;
     color: black;
     padding-left: 70px;
     padding-right: 70px;
     padding-top: 50px;
     padding-bottom: 80px;
-    width: 700px;
-    height: 250px;
+    width: 650px;
+    height: 450px;
     opacity: 0.8;
     border: 3px solid #ccccfd;
     margin: auto;
 
 }
 
-.chooseElement{
+.chooseElement {
     float: left;
-    margin-right: 10px;
+    margin-right: 50px;
 }
 
-.butt{
+.butt {
     margin-top: 30px;
     background: #ccccfd;
     color: black;
@@ -69,7 +74,38 @@ body{
     padding: 1rem 1.5rem;
 }
 
-.butt:hover { background: #6e68bd; }
+.butt:hover {
+    background: #6e68bd;
+}
+
+.button {
+    width: 45px;
+    padding: 5px;
+    margin-bottom: 5px;
+    float: left;
+
+}
+
+.buttons{
+    width: 190px;
+}
+
+.reset {
+    width: 45px;
+    padding: 5px;
+    margin-bottom: 5px;
+    float: right;
+}
+
+.button:hover {
+    background-position: 0 0;
+    color: #fff;
+}
+
+.button:focus {
+    background-position: 0 0;
+    color: #fff;
+}
 
 table {
     color: black;
@@ -103,19 +139,18 @@ td, th, tr {
     background: #ccccfd;
 }
 
-.graf{
+.graf {
     height: 250px;
-
 }
 
-#image{
+#image {
     border: 3px solid #ccccfd;
     margin-left: 30px;
     width: 250px;
     height: 250px;
 }
 
-#VT_logo{
+#VT_logo {
     background: #ccccfd
 
 }
@@ -124,4 +159,8 @@ input[type=text] {
 
     font-size: 15px;
     text-align: center;
+}
+
+.frame{
+    opacity: 0;
 }

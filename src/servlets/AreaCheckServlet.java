@@ -22,27 +22,24 @@ public class AreaCheckServlet extends HttpServlet {
         ServletContext context = getServletContext();
 
         double x = Double.parseDouble(request.getParameter("enterX"));
-        double y = 2.0;
+        double y = Double.parseDouble(request.getParameter("Y"));
         //Double.parseDouble(request.getParameter("y"));
         double r = Double.parseDouble(request.getParameter("enterR"));
-        LocalDateTime currentDate = LocalDateTime.now();
-
+        long currentDate = System.nanoTime();
 
         HashMap<String, Object> results = new HashMap();
-
 
         results.put("x", x);
         results.put("y", y);
         results.put("r", r);
-        results.put("currentDate", currentDate);
+        results.put("currentDate", LocalDateTime.now());
         results.put("result", this.check(x, y, r));
-        double runTime = (double) Duration.between(currentDate, LocalDateTime.now()).toMillis();
-        results.put("runTime", runTime);
 
+        String runTime = String.valueOf((System.nanoTime() - currentDate )/1000 + " mcs");
+        results.put("runTime", runTime);
 
         if (context.getAttribute("table") == null) {
             historyList = new ArrayList();
-
         } else {
             historyList = (ArrayList) context.getAttribute("table");
         }
@@ -67,6 +64,8 @@ public class AreaCheckServlet extends HttpServlet {
 
 
     public boolean check(double x, double y, double r) {
+
+
         if ((x * x + y * y <= r * r && x >= 0 && y >= 0) || (x > -r / 2 && x < 0 && y < 0 && y > -r)
                 || (x > 0 && y <= x + r && x < r))
             return true;

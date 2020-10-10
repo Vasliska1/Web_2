@@ -27,7 +27,7 @@
 
     <div class="link">
         <a href="index.jsp?in=true">
-            <img src="./assets/images/back.jpg" width="80" height="50"></a>
+            <img src="./assets/images/dead.jpg" width="80" height="80"></a>
     </div>
 
     <table>
