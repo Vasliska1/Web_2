@@ -15,7 +15,7 @@ import java.util.HashMap;
 @WebServlet(name = "AreaCheckServlet")
 public class AreaCheckServlet extends HttpServlet {
 
-    ArrayList historyList;
+    private ArrayList historyList;
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletContext context = getServletContext();
