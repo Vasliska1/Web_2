@@ -1,116 +1,93 @@
-function validate(form){
+function validate(form) {
 
     var fail = "";
-    var R= form.enterR.value;
+    var R = form.enterR.value;
     var X = form.enterX.value;
-
     var chooseRTitle = form.querySelector('.chooseRTitle');
     var chooseXTitle = form.querySelector('.chooseXTitle');
     var chooseYTitle = form.querySelector('.chooseYTitle')
     var Y = document.getElementById('Y').value;
-    //[0].defaultValue
 
-    if(Y==null || Y=="") {
+
+    if (Y == null || Y == "") {
+
         fail = fail + '<br>' + "Впишите Y!!";
-        chooseYTitle.style.color='red';
+        chooseYTitle.style.color = 'red';
         chooseYTitle.style.fontWeight = 'bold';
-
     }
-    if (X>= 5 || X<=-3 || isNaN(X)){
+    if (Y > 5 || Y < -3 || isNaN(X)) {
 
-        fail = fail   +'<br>'+ "Значение X должно быть от -3 до 5!!";
-         chooseXTitle.style.color='red';
-         chooseXTitle.style.fontWeight = 'bold';
-
+        fail = fail + '<br>' + "Значение Y должно быть от -3 до 5!!";
+        chooseYTitle.style.color = 'red';
+        chooseYTitle.style.fontWeight = 'bold';
     }
-    if(X==null || X=="") {
-        fail = fail + '<br>' + "Впишите X!!";
-        chooseXTitle.style.color='red';
+
+    if (X >= 5 || X <= -3 || isNaN(X)) {
+
+        fail = fail + '<br>' + "Значение X должно быть от -3 до 5!!";
+        chooseXTitle.style.color = 'red';
         chooseXTitle.style.fontWeight = 'bold';
-
-
     }
-/*    if(Y == null || Y == ""){
-        fail = fail + '<br>' + "Впишите Y!!";
 
-    }*/
+    if (X == null || X == "") {
 
+        fail = fail + '<br>' + "Впишите X!!";
+        chooseXTitle.style.color = 'red';
+        chooseXTitle.style.fontWeight = 'bold';
+    }
 
-    if (R>= 5 || R<=2 || isNaN(R)){
+    if (R >= 5 || R <= 2 || isNaN(R)) {
 
-        fail = fail + '<br>'+ "Значение R должно быть от 2 до 5!!";
-       chooseRTitle.style.color='red';
+        fail = fail + '<br>' + "Значение R должно быть от 2 до 5!!";
+        chooseRTitle.style.color = 'red';
         chooseRTitle.style.fontWeight = 'bold';
-
     }
 
 
-
-    if (fail){
-
+    if (fail) {
         var element = document.getElementById('message');
-        element.innerHTML=fail;
+        element.innerHTML = fail;
         return false;
-    }
-    else {
+    } else {
         return true;
     }
-
-
-
-
-
 }
+
 document.getElementById('graph').addEventListener('click', function (e) {
-var r = document.getElementById('enterR').value;
-   if (!r) {
-       var element = document.getElementById('message');
-       element.innerHTML="Вы должны выбрать R!!";
-        return;
+        var r = document.getElementById('enterR').value;
+        var element = document.getElementById('message');
+        if (!r) {
+            element.innerHTML = '<br>' + "Вы должны выбрать R!!";
+        }
+        var svg = document.getElementById('graph');
+        var htmlCoordinatesPoint = svg.createSVGPoint();
+        htmlCoordinatesPoint.x = e.clientX;
+        htmlCoordinatesPoint.y = e.clientY;
+        var svgPoint = htmlCoordinatesPoint.matrixTransform(svg.getScreenCTM().inverse());
+        var calcX = (svgPoint.x - 150) * r / 100; 
+        var calcY = -(svgPoint.y - 150) * r / 100;
+
+
+        if (r) {
+            document.getElementById('enterX').value = calcX.toFixed(3);
+            document.getElementById('Y').value = calcY.toFixed(3);
+        }
+        var getX = svgPoint.x;
+        var getY = svgPoint.y;
+
+        var point = document.getElementById('point');
+
+        setAttributes(point, {"cx": String(getX), "cy": String(getY), "r": "2"});
+
+        function setAttributes(el, options) {
+            Object.keys(options).forEach(function (attr) {
+                el.setAttribute(attr, options[attr]);
+            })
+        }
+
+
     }
-
-
-    var svg = document.getElementById('graph');
-    var htmlCoordinatesPoint = svg.createSVGPoint();
-    htmlCoordinatesPoint.x = e.clientX;
-    htmlCoordinatesPoint.y = e.clientY;
-    var svgPoint = htmlCoordinatesPoint.matrixTransform(svg.getScreenCTM().inverse());
-    var calcX = r*(svgPoint.x -150) / 95 ; //svg coordinates to point coordinates
-    var calcY = r* -(svgPoint.y-150) /95;
-;
-
-    document.getElementById('enterX').setAttribute('value', String(calcX));
-    document.getElementById('Y').setAttribute('value', String(calcY));
-
-    var canvas = document.createElement("canvas");
-    canvas.setAttribute("width", window.innerWidth);
-    canvas.setAttribute("height", window.innerHeight);
-    canvas.setAttribute("style", "position: absolute; x:0; y:0;");
-    document.body.appendChild(canvas);
-
-//Then you can draw a point at (10,10) like this:
-  //  var getY = calcY.getBoundingClientRect();
-    var ctx = canvas.getContext("2d");
-    alert(svgPoint.x)
-    alert(svgPoint.y)
-    var getY=  e.clientY-50;
-    ctx.fillRect(e.clientX, getY,10,10);
-
-
-/*
-    const xText = document.getElementById('x-header');
-    const xElem = document.getElementById('x-choice');
-    const yText = document.getElementById('y-header');
-    xText.classList.remove("invalid", "valid");
-    xElem.classList.remove("invalid", "valid");
-    yText.classList.remove("invalid", "valid");
-
-    xElem.value = "";
-    const radio = document.querySelector('input[type="radio"]:checked');
-    if (radio) radio.checked="";
-    document.getElementById('form').submit();*/
-});
-
+);
 
 
 

@@ -1,5 +1,4 @@
 <%-- Created by IntelliJ IDEA. --%>
-
 <%@ page import="java.util.stream.Stream" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -76,10 +75,11 @@
 		include('header.php');
 	?>
 
-</div>
+
     <div class="svg">
 
         <svg width="300" height="300" id="graph" class="svg-graph">
+
 
             <polygon class="frame" points="0,0 0,300 300,300 300,0"></polygon>
 
@@ -108,17 +108,21 @@
             <text class="text" x="290" y="170">X</text>
             <text class="text" x="160" y="13">Y</text>
 
+            <circle class="point" cx="0" cy="0" r="0" fill="orange" stroke="navy" stroke-width="10"
+                    id="point"></circle>
+
         </svg>
     </div>
-<center>
-<div class="footer">
-    <a href="https://se.ifmo.ru/">
-        <img id="VT_logo" src="assets/images/vt_logo.png" width="100" height="100 " alt="logo">
-    </a>
-    <span class="center">ПИП 2020 г.</span>
 </div>
-</center>
 
+<center>
+    <div class="footer">
+        <a href="https://se.ifmo.ru/">
+            <img id="VT_logo" src="assets/images/vt_logo.png" width="100" height="100 " alt="logo">
+        </a>
+        <span class="center">ПИП 2020 г.</span>
+    </div>
+</center>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
         crossorigin="anonymous"></script>

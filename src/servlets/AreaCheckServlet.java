@@ -14,16 +14,14 @@ import java.util.HashMap;
 
 @WebServlet(name = "AreaCheckServlet")
 public class AreaCheckServlet extends HttpServlet {
-    private Boolean result;
-    private ServletContext servletContext;
+
     ArrayList historyList;
-    ArrayList pointsList;
+
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletContext context = getServletContext();
 
         double x = Double.parseDouble(request.getParameter("enterX"));
         double y = Double.parseDouble(request.getParameter("Y"));
-        //Double.parseDouble(request.getParameter("y"));
         double r = Double.parseDouble(request.getParameter("enterR"));
         long currentDate = System.nanoTime();
 
@@ -35,7 +33,7 @@ public class AreaCheckServlet extends HttpServlet {
         results.put("currentDate", LocalDateTime.now());
         results.put("result", this.check(x, y, r));
 
-        String runTime = String.valueOf((System.nanoTime() - currentDate )/1000 + " mcs");
+        String runTime = String.valueOf((System.nanoTime() - currentDate) / 1000 + " mcs");
         results.put("runTime", runTime);
 
         if (context.getAttribute("table") == null) {
@@ -50,24 +48,13 @@ public class AreaCheckServlet extends HttpServlet {
 
         getServletContext().getRequestDispatcher("/response.jsp").forward(request, response);
 
-      /*  ServletContext context = getServletContext();
-        if (context.getAttribute("rows") == null)
-            context.setAttribute("rows", new RowsOfData());
-        request.setAttribute("path", request.getRequestURI());
-
-        RowData newRow = new RowData(String.valueOf(System.nanoTime()), new Point(x, y, r));
-        request.setAttribute("row", newRow);
-        RowsOfData rows = (RowsOfData) context.getAttribute("rows");
-        rows.addRow(newRow);
-        getServletContext().getRequestDispatcher("/response.jsp").forward(request, response);*/
     }
 
 
     public boolean check(double x, double y, double r) {
 
-
         if ((x * x + y * y <= r * r && x >= 0 && y >= 0) || (x > -r / 2 && x < 0 && y < 0 && y > -r)
-                || (x > 0 && y <= x/2 - r/2 && x < r))
+                || (x > 0 && y <= x / 2 - r / 2 && x < r))
             return true;
         else return false;
     }
