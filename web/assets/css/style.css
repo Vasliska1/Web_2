@@ -15,36 +15,10 @@ body {
     margin-left: 10px;
 }
 
-.chooseXTitle {
-    /*text-align: center;*/
-}
-
-.chooseRTitle {
-    /*text-align: center;*/
-}
-
 .svg {
     float: right;
 
 }
-
-/*.chooseX {
-    display: inline-block;
-    float: left;
-    margin: auto;
-}
-.chooseElement > .YR > .chooseR {
-    width: 200px;
-    height: 100px;
-}
-.YR {
-    margin-left: 170px;
-    margin-right: 20px;
-    width: 210px;
-    color: black;
-    border-radius: 15px;
-    opacity: 1;
-}*/
 
 .basis {
     background: #FFCCCC;
@@ -58,7 +32,6 @@ body {
     opacity: 0.8;
     border: 3px solid #ccccfd;
     margin: auto;
-
 }
 
 .chooseElement {
@@ -83,7 +56,6 @@ body {
     padding: 5px;
     margin-bottom: 5px;
     float: left;
-
 }
 
 .buttons{
@@ -139,10 +111,6 @@ td, th, tr {
     background: #ccccfd;
 }
 
-.graf {
-    height: 250px;
-}
-
 #image {
     border: 3px solid #ccccfd;
     margin-left: 30px;
@@ -152,11 +120,9 @@ td, th, tr {
 
 #VT_logo {
     background: #ccccfd
-
 }
 
 input[type=text] {
-
     font-size: 15px;
     text-align: center;
 }

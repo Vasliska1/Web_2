@@ -64,7 +64,7 @@ document.getElementById('graph').addEventListener('click', function (e) {
         htmlCoordinatesPoint.x = e.clientX;
         htmlCoordinatesPoint.y = e.clientY;
         var svgPoint = htmlCoordinatesPoint.matrixTransform(svg.getScreenCTM().inverse());
-        var calcX = (svgPoint.x - 150) * r / 100; 
+        var calcX = (svgPoint.x - 150) * r / 100;
         var calcY = -(svgPoint.y - 150) * r / 100;
 
 

@@ -71,11 +71,6 @@
         </form>
     </div>
 
-    <?php
-		include('header.php');
-	?>
-
-
     <div class="svg">
 
         <svg width="300" height="300" id="graph" class="svg-graph">
