@@ -84,6 +84,10 @@
             <polygon class="treyg" points="150,150 250,150 150,200"
                      fill="#FF00CC" stroke="black"></polygon>
 
+            <g transform="translate(150 150) scale(50)">
+                <path d="M0 0 L 0 -2 A2 2 0 0 1  2  0 " fill="#FF00CC" stroke="black"  stroke-width="0.03"></path>
+            </g>
+
             <line class="line" x1="0" x2="300" y1="150" y2="150" stroke="black"></line>
             <line class="line" x1="150" x2="150" y1="0" y2="300" stroke="black"></line>
 
@@ -119,6 +123,8 @@
     </div>
 </center>
 
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
 <script>
     $('label > .button').click(function () {
         y = ($(this).val());

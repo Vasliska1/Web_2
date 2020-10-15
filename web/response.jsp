@@ -5,9 +5,12 @@
   Time: 7:49 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -23,12 +26,12 @@
     <p>Вар. 2833</p>
 </div>
 
-<div class="centerBorderT">
+<div class="link">
+    <a href="index.jsp?in=true">
+        <img src="./assets/images/dead.jpg" width="80" height="80"></a>
+</div>
 
-    <div class="link">
-        <a href="index.jsp?in=true">
-            <img src="./assets/images/dead.jpg" width="80" height="80"></a>
-    </div>
+<div class="centerBorder">
 
     <table>
 
@@ -37,29 +40,20 @@
             <th>Y</th>
             <th>R</th>
             <th>Текущее время</th>
-            <th>Время выполнения</th>
+            <th>Время <br> выполнения</th>
             <th>Результат</th>
         </tr>
-        <%
-            ArrayList<HashMap<String, Object>> results;
 
-            results = (ArrayList<HashMap<String, Object>>)
-                    request.getServletContext().getAttribute("table");
-            for (HashMap<String, Object> map : results) {
-        %>
-        <tr>
-
-            <td><% out.print(map.get("x"));%></td>
-            <td><% out.print(map.get("y"));%></td>
-            <td><% out.print(map.get("r"));%></td>
-            <td><% out.print(map.get("currentDate"));%></td>
-            <td><% out.print(map.get("runTime"));%></td>
-            <td><% out.print(map.get("result"));%></td>
-            <%
-                }
-            %>
-        </tr>
-
+        <c:forEach var="par" items="${requestScope.table}">
+            <tr>
+                <td>${par.x}</td>
+                <td>${par.y}</td>
+                <td>${par.r}</td>
+                <td>${par.currentDate}</td>
+                <td>${par.runTime}</td>
+                <td>${par.result}</td>
+            </tr>
+        </c:forEach>
 
     </table>
 

@@ -93,13 +93,14 @@ td, th, tr {
 }
 
 .centerBorder {
+
     background: #FFCCCC;
     color: black;
     padding-left: 70px;
     padding-right: 70px;
     padding-top: 50px;
     padding-bottom: 70px;
-    width: 700px;
+    width: 800px;
     height: 400px;
     opacity: 0.8;
     overflow: scroll;

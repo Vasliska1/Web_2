@@ -11,7 +11,7 @@ function validate(form) {
 
     if (Y == null || Y == "") {
 
-        fail = fail + '<br>' + "Впишите Y!!";
+        fail = fail + '<br>' + "Выберите Y!!";
         chooseYTitle.style.color = 'red';
         chooseYTitle.style.fontWeight = 'bold';
     }
@@ -67,7 +67,6 @@ document.getElementById('graph').addEventListener('click', function (e) {
         var calcX = (svgPoint.x - 150) * r / 100;
         var calcY = -(svgPoint.y - 150) * r / 100;
 
-
         if (r) {
             document.getElementById('enterX').value = calcX.toFixed(3);
             document.getElementById('Y').value = calcY.toFixed(3);
@@ -85,9 +84,7 @@ document.getElementById('graph').addEventListener('click', function (e) {
             })
         }
 
-
     }
 );
-
 
 
