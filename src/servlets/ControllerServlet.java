@@ -32,7 +32,7 @@ public class ControllerServlet extends HttpServlet {
     public boolean validate(String x, String y, String r) {
         System.out.println(x);
         if (x.matches("((-|\\\\+)?[0-9]+(\\\\.[0-9]+)?)+") && y.matches("((-|\\\\+)?[0-9]+(\\\\.[0-9]+)?)+") && r.matches("((-|\\\\+)?[0-9]+(\\\\.[0-9]+)?)+")) {
-            return ((Double.parseDouble(x) <= -3 || Double.parseDouble(x) >= 5) || (Double.parseDouble(y) < -3 || Double.parseDouble(y) > 5) || (Double.parseDouble(r) < 2 || Double.parseDouble(r) > 5));
+            return !((Double.parseDouble(x) <= -3 || Double.parseDouble(x) >= 5) || (Double.parseDouble(y) < -3 || Double.parseDouble(y) > 5) || (Double.parseDouble(r) < 2 || Double.parseDouble(r) > 5));
         } else return false;
     }
 
